@@ -45,12 +45,7 @@ struct ProfileView: View {
                         SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
                     }
                     
-//                    Button{
-////                        authVM.deleteAccount()
-//                        print("Delete Account")
-//                    } label: {
-//                        SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: .red)
-//                    }
+
                     
                 }
             }

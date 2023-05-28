@@ -13,14 +13,11 @@ import Firebase
 import FirebaseFirestoreSwift
 
 
-// having all functionality assiciated with the USer i.e Network Requests
-// will handle form validation then will send updates to View
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool {get}
+}
 
 @MainActor
-/**
- an attribute applied to the class, indicating that all methods and properties of the AuthViewModel should be accessed and updated on the main actor's queue (main thread).
- This is necessary to ensure thread safety when dealing with UI-related operations
- */
 class AuthViewModel: ObservableObject {
     //represents the current authenticated user, obtained from Firebase Authentication, helps navigate to profile screen
     // marked as @Published, which means any changes to it will automatically update the subscribed views.
