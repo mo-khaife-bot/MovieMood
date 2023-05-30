@@ -35,7 +35,9 @@ struct MainMovieView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack{
                                 ForEach(movieViewModel.moviesList) { result in
-                                    TrendingCard(trendingItem: result)
+                                    NavigationLink(destination: DetailsView(movieItem: result)) {
+                                        TrendingCard(trendingItem: result)
+                                    }
                                 }
                             }
                             .padding(.horizontal)
@@ -46,42 +48,45 @@ struct MainMovieView: View {
                 } else {
                     LazyVStack {
                         ForEach(movieViewModel.searchResults) { result in
-                            HStack {
-                                AsyncImage(url: result.backdropURL) { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 80, height: 120)
-                                } placeholder: {
-                                    ProgressView()
-                                        .frame(width: 80, height: 120)
-                                }
-                                .clipped()
-                                .cornerRadius(10)
-                                
-                                VStack(alignment: .leading) {
-                                    Text(String(result.title.prefix(15)) + (result.title.count > 20 ? "..." : ""))
-                                        .foregroundColor(.white)
-                                        .font(.headline)
-                                    Text(result.releaseYear)
-                                        .foregroundColor(.white)
-                                        .font(.headline)
-                                    
-                                    HStack {
-                                        Image(systemName: "hand.thumbsup.fill")
-                                        Text(String(format: "%.1f", result.vote_average))
-                                        
-                                        Spacer()
+                            NavigationLink(destination: DetailsView(movieItem: result)) {
+                                HStack {
+                                    AsyncImage(url: result.backdropURL) { image in
+                                        image
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 80, height: 120)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .frame(width: 80, height: 120)
                                     }
-                                    .foregroundColor(.yellow)
-                                    .fontWeight(.heavy)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(String(result.title.prefix(15)) + (result.title.count > 20 ? "..." : ""))
+                                            .foregroundColor(.white)
+                                            .font(.headline)
+                                        Text(result.releaseYear)
+                                            .foregroundColor(.white)
+                                            .font(.headline)
+                                        
+                                        HStack {
+                                            Image(systemName: "hand.thumbsup.fill")
+                                            Text(String(format: "%.1f", result.vote_average))
+                                            
+                                            Spacer()
+                                        }
+                                        .foregroundColor(.yellow)
+                                        .fontWeight(.heavy)
+                                    }
+                                    Spacer()
                                 }
-                                Spacer()
+                                .padding()
+                                .background(Color(red:61/255,green:61/255,blue:88/255))
+                                .cornerRadius(20)
+                                .padding(.horizontal)
+                                
                             }
-                            .padding()
-                            .background(Color(red:61/255,green:61/255,blue:88/255))
-                            .cornerRadius(20)
-                            .padding(.horizontal)
                         }
                         
                         

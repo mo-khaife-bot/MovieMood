@@ -193,7 +193,6 @@ class MovieDBViewModel: ObservableObject {
     @Published var moviesList: [MovieItem] = []
     @Published var searchResults: [MovieItem] = []
     
-    //    let baseAPI = "https://api.themoviedb.org/3"
     
     let networkManager: MoviesNetworkProtocol
     
@@ -203,44 +202,6 @@ class MovieDBViewModel: ObservableObject {
     
     
     
-    //    func getAPIKey() -> String? {
-    //
-    //        guard let filePath = Bundle.main.path(forResource: "TMDB-Info", ofType: "plist") else {
-    //            fatalError("Couldn't find file 'TMDB-Info.plist'.")
-    //        }
-    //        // 2
-    //        let plist = NSDictionary(contentsOfFile: filePath)
-    //        guard let value = plist?.object(forKey: "API_KEY") as? String else {
-    //            fatalError("Couldn't find key 'API_KEY' in 'TMDB-Info.plist'.")
-    //        }
-    //        return value
-    //    }
-    //
-    //
-    //
-    //
-    //    func fetchTrendingMovies() {
-    //        guard let apiKey = getAPIKey() else {
-    //            fatalError("Unable to retrieve API key.")
-    //        }
-    //
-    //
-    //        let urlString = "\(baseAPI)/trending/movie/day?api_key=\(apiKey)"
-    //        guard let url = URL(string: urlString) else {
-    //            fatalError("Invalid URL: \(urlString)")
-    //        }
-    //
-    //        networkManager.fetchTrendingMovies(from: url) { result in
-    //            switch result {
-    //            case .success(let trendingResults):
-    //                DispatchQueue.main.async {
-    //                    self.trendingList = trendingResults.results
-    //                }
-    //            case .failure(let error):
-    //                print("Error: \(error.localizedDescription)")
-    //            }
-    //        }
-    //    }
     
     func fetchTrendingMovies() {
         networkManager.fetchTrendingMovies { [weak self] result in

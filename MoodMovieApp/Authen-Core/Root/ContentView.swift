@@ -13,27 +13,32 @@ struct ContentView: View {
     
     
     var body: some View {
-        Group {
-            if $authViewModel.userSession != nil {
-                TabView {
-                    MainMovieView()
-                        .tabItem{
-                            Image(systemName: "popcorn")
-                            Text("Movies")
-                        }
+        
+        NavigationStack {
+            
+            Group {
+                if authViewModel.userSession != nil {
+                    TabView {
+                        MainMovieView()
+                            .tabItem{
+                                Image(systemName: "popcorn")
+                                Text("Movies")
+                            }
+                        
+                        
+                        ProfileView()
+                            .tabItem{
+                                Image(systemName: "person.crop.circle.fill")
+                                Text("Profile")
+                            }
+                        
+                        
+                    }
                     
-                    
-                    ProfileView()
-                        .tabItem{
-                            Image(systemName: "person.crop.circle.fill")
-                            Text("Profile")
-                        }
-                    
-                    
+                } else {
+                    LoginView()
                 }
                 
-            } else {
-                LoginView()
             }
             
         }
