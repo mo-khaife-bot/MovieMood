@@ -36,6 +36,10 @@
 		D4F822B12A24F90C004F9839 /* MovieError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F822B02A24F90C004F9839 /* MovieError.swift */; };
 		D4F822B52A2505CD004F9839 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F822B42A2505CD004F9839 /* Utils.swift */; };
 		D4F822B72A252A5B004F9839 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F822B62A252A5B004F9839 /* NetworkManager.swift */; };
+		D4F822B92A25EF15004F9839 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F822B82A25EF14004F9839 /* README.md */; };
+		D4F822BB2A25F225004F9839 /* searchfilter.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F822BA2A25F225004F9839 /* searchfilter.png */; };
+		D4F822BD2A25F234004F9839 /* trending_movies_page.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F822BC2A25F234004F9839 /* trending_movies_page.png */; };
+		D4F822BF2A25F249004F9839 /* profile_page.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F822BE2A25F249004F9839 /* profile_page.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		D4F822B02A24F90C004F9839 /* MovieError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieError.swift; sourceTree = "<group>"; };
 		D4F822B42A2505CD004F9839 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D4F822B62A252A5B004F9839 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D4F822B82A25EF14004F9839 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F822BA2A25F225004F9839 /* searchfilter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchfilter.png; sourceTree = "<group>"; };
+		D4F822BC2A25F234004F9839 /* trending_movies_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trending_movies_page.png; sourceTree = "<group>"; };
+		D4F822BE2A25F249004F9839 /* profile_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_page.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,10 @@
 		D4F822402A23BAA4004F9839 = {
 			isa = PBXGroup;
 			children = (
+				D4F822B82A25EF14004F9839 /* README.md */,
+				D4F822BE2A25F249004F9839 /* profile_page.png */,
+				D4F822BC2A25F234004F9839 /* trending_movies_page.png */,
+				D4F822BA2A25F225004F9839 /* searchfilter.png */,
 				D4F8224B2A23BAA5004F9839 /* MoodMovieApp */,
 				D4F8225C2A23BAA7004F9839 /* MoodMovieAppTests */,
 				D4F822662A23BAA7004F9839 /* MoodMovieAppUITests */,
@@ -414,8 +426,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F822BF2A25F249004F9839 /* profile_page.png in Resources */,
+				D4F822BD2A25F234004F9839 /* trending_movies_page.png in Resources */,
 				D4F822542A23BAA7004F9839 /* Preview Assets.xcassets in Resources */,
 				D4F8229B2A240A47004F9839 /* TMDB-Info.plist in Resources */,
+				D4F822B92A25EF15004F9839 /* README.md in Resources */,
+				D4F822BB2A25F225004F9839 /* searchfilter.png in Resources */,
 				D4F822512A23BAA7004F9839 /* Assets.xcassets in Resources */,
 				D4F822902A23CA03004F9839 /* GoogleService-Info.plist in Resources */,
 			);
