@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @EnvironmentObject var authVM: AuthViewModel
+    @State private var showLoginView = false // Flag to control navigation to LoginView
     
     
     var body: some View {
@@ -45,11 +46,16 @@ struct ProfileView: View {
                         SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
                     }
                     
-
-                    
                 }
             }
-
+            .navigationBarTitle("Profile")
+            .background(
+                NavigationLink(destination: LoginView(), isActive: $showLoginView) {
+                    EmptyView()
+                }
+                    .hidden()
+            )
+            
         }
     }
 }
@@ -57,6 +63,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView().environmentObject(AuthViewModel()) // Provide an instance of AuthViewModel
-
+        
     }
 }

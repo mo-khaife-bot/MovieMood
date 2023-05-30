@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrendingCard: View {
     
-    let trendingItem : TrendingItem
+    let trendingItem : MovieItem
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -51,13 +51,17 @@ struct TrendingCard: View {
 
 struct TrendingCard_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleItem = TrendingItem(
+        let sampleItem = MovieItem(
                     adult: false,
                     id: 1,
                     poster_path: "/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
                     title: "Sample Trending Item",
                     vote_average: 8.5,
-                    backdrop_path: "/h8gHn0OzBoaefsYseUByqsmEDMY.jpg"
+                    backdrop_path: "/h8gHn0OzBoaefsYseUByqsmEDMY.jpg",
+                    overview: "words",
+                    release_date: "2006-12-12"
+                    
+                    
                 )
         TrendingCard(trendingItem: sampleItem)
     }
